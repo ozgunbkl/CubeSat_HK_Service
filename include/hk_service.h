@@ -37,5 +37,7 @@ int HK_UpdateParam(hk_param_id_t id, uint32_t value, uint32_t current_time);
 int HK_ReadParam(hk_param_id_t id, hk_entry_t *out_entry);
 void HK_SetLimits(hk_param_id_t id, uint32_t low, uint32_t high);
 int HK_Serialize(uint8_t *buffer, uint16_t buffer_size);
-
+void HK_ProcessCommand(const uint8_t* payload, uint16_t len);
+void HK_GenerateReport(void);
+void HK_RunPeriodic(uint32_t current_time_ms);
 #endif
